@@ -1,4 +1,7 @@
-body { font-family: sans-serif; }
+body { 
+	font-family: sans-serif; 
+	overflow: hidden;
+}
 
 h1, h2, h3, h4, h5, h6 { font-weight: 400; }
 
@@ -13,4 +16,8 @@ main {
 
 .col {
 	position: unset;
+}
+
+.step-three {
+	display: flex;
 }

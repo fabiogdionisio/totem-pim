@@ -2,12 +2,14 @@
 
 	text-align: center;
 	background-color: $mainColorLg;
-	padding: 3rem;
 	border: 1px solid $mainColorDk;
 	-webkit-box-shadow: 0px52px 10px 0px rgba(0,0,0,0.2);
 	-moz-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.2);
 	box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.2);
 	height: 583px;
+
+	&__one { padding: 3rem;	}
+	&__two { padding: 2rem;	}
 
 	&__title {
 		font-size: 1.25rem;

@@ -31,26 +31,14 @@
 		}
 	}
 
-	&--vertical {
-		width: 100%;
-		flex-flow: unset;
-		height: unset;
+	&__sm {
+
+		height: 130px;
 		padding: 1rem;
-		justify-content: left;
-		margin-bottom: 2rem;
 
-		.option__icon {
-			margin-bottom: unset;
-			width: 25px;
-		}
-
-		.option__text {
-			font-size: 1rem;
-			margin-bottom: unset;
-			margin-left: 1rem;
-		}
+		.option__text {	font-size: 0.9rem; }
+		.option__icon {	height: 40px; width: auto; }
 	}
-
 
 	&__text {
 		font-size: 1.25rem;
