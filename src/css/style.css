@@ -10570,8 +10570,10 @@ main {
 .step-three {
   display: flex; }
 
+.advertise {
+  background-color: #eedbfe; }
+
 .content {
-  text-align: center;
   background-color: #fdf5fc;
   border: 1px solid #8e3a89;
   -webkit-box-shadow: 0px52px 10px 0px rgba(0, 0, 0, 0.2);
@@ -10636,14 +10638,42 @@ main {
   width: 50px;
   margin-bottom: 1rem; }
 
+.card {
+  border: 1px solid #8e3a89;
+  border-radius: 0;
+  background-color: #eedbfe; }
+
+.older__password, .older__table {
+  list-style: none;
+  padding: 0; }
+  .older__password li, .older__table li {
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #8e3a89; }
+
 .text--main-dk {
   color: #8e3a89; }
 
 .text--lg {
   font-size: 1.3em; }
 
+.text--xl {
+  font-size: 2em; }
+
 .text--break {
   display: block; }
 
+.text--current {
+  font-size: 7em;
+  font-weight: bold;
+  color: #8e3a89; }
+
 .icon--main-dk {
   filter: invert(28%) sepia(83%) saturate(676%) hue-rotate(259deg) brightness(89%) contrast(90%); }
+
+.border-left-dk {
+  border-left: 1px solid #8e3a89; }
+
+.border-right-dk {
+  border-right: 1px solid #8e3a89; }

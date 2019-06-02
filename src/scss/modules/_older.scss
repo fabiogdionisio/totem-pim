@@ -1,0 +1,14 @@
+.older {
+
+	&__password, &__table {
+		list-style: none;
+		padding: 0;
+
+		li {
+			margin-bottom: 1rem;
+			font-size: 1.8rem;
+			font-weight: bold;
+			color: $mainColorDk;
+		}
+	}
+}

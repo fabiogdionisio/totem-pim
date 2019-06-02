@@ -23,7 +23,6 @@ function selectOptionStart() {
 			let interval = setInterval(function(){
 				options[i].classList.remove("d-none");
 				animateCSS(options[i], "fadeIn");
-				console.log(options[i]);
 				i++;
 				if (i === options.length) {
 					clearInterval(interval); 
@@ -49,8 +48,9 @@ function selectOptionService() {
 		$(".step-three").removeClass('d-none')
 		animateCSS(document.querySelector(".step-three .icon"), "bounceIn");
 
-	}, 2200);
+		getPassword();
 
+	}, 2200);
 }
 
 function animateCSS(element, animationName, callback) {
@@ -65,4 +65,16 @@ function animateCSS(element, animationName, callback) {
 		}
 
 	node.addEventListener('animationend', handleAnimationEnd)
+}
+
+function getPassword() {
+
+	payload = {
+		"type": localStorage.getItem("type"),
+		"service": localStorage.getItem("service")
+	};
+
+	$.post(apiUrl + "/password", payload, function(data) {
+		
+	});
 }

@@ -2,7 +2,13 @@
 
 	&--main-dk { color: $mainColorDk; }
 	&--lg { font-size: 1.3em; }
+	&--xl { font-size: 2em; }
 	&--break { display: block; }
+	&--current {
+		font-size: 7em;
+		font-weight: bold;
+		color: $mainColorDk;
+	}
 	
 }
 
@@ -12,4 +18,9 @@
 		filter: invert(28%) sepia(83%) saturate(676%) hue-rotate(259deg) brightness(89%) contrast(90%);
 
 	}
+}
+
+.border {
+	&-left-dk { border-left: 1px solid $mainColorDk; }
+	&-right-dk { border-right: 1px solid $mainColorDk; }
 }
