@@ -1,0 +1,15 @@
+.text {
+
+	&--main-dk { color: $mainColorDk; }
+	&--lg { font-size: 1.3em; }
+	&--break { display: block; }
+	
+}
+
+.icon {
+
+	&--main-dk {
+		filter: invert(28%) sepia(83%) saturate(676%) hue-rotate(259deg) brightness(89%) contrast(90%);
+
+	}
+}

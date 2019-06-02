@@ -1,0 +1,23 @@
+{
+  "name": "totem-pim",
+  "version": "1.0.0",
+  "description": "Totem do sistema de senhas desenvolvido para o PIM do 4º semestre do curso de análise e desenvolvimento de sistemas da UNIP de 2019",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.7.0",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-inject": "^5.0.2",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-sass": "^4.0.2",
+    "gulp-terser": "^1.1.7",
+    "gulp-uglify": "^3.0.1"
+  }
+}

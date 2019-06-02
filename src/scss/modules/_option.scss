@@ -1,0 +1,67 @@
+.option {
+
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+	background-color: $mainColor;
+	height: 200px;
+	border: 1px solid $mainColorDk;
+	cursor: pointer;
+	transition: 0.2s;
+	position: relative;
+
+	&:hover {
+		background-color: darken($mainColor, 5%);
+	}
+
+	&--active {
+		transition: 1s;
+		background-color: unset;
+		border: none;
+		cursor: unset;
+
+		.option__icon {
+			transition: 1s;
+			width: 50px;
+		}
+
+		&:hover {
+			background-color: unset;
+		}
+	}
+
+	&--vertical {
+		width: 100%;
+		flex-flow: unset;
+		height: unset;
+		padding: 1rem;
+		justify-content: left;
+		margin-bottom: 2rem;
+
+		.option__icon {
+			margin-bottom: unset;
+			width: 25px;
+		}
+
+		.option__text {
+			font-size: 1rem;
+			margin-bottom: unset;
+			margin-left: 1rem;
+		}
+	}
+
+
+	&__text {
+		font-size: 1.25rem;
+		font-weight: bold;
+		color: $mainColorDk;
+	}
+
+	&__icon {
+		width: 75px;
+		filter: invert(28%) sepia(83%) saturate(676%) hue-rotate(259deg) brightness(89%) contrast(90%);
+		margin-bottom: 1rem;
+	}
+
+}
