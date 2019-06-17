@@ -48,7 +48,7 @@ function selectOptionService() {
 		$(".step-three").removeClass('d-none')
 		animateCSS(document.querySelector(".step-three .icon"), "bounceIn");
 
-		getPassword();
+		newPswrd();
 
 	}, 2200);
 }
@@ -67,14 +67,103 @@ function animateCSS(element, animationName, callback) {
 	node.addEventListener('animationend', handleAnimationEnd)
 }
 
-function getPassword() {
+function newPswrd() {
+	var type = localStorage.getItem("type");
+	var service = localStorage.getItem("service");
 
-	payload = {
-		"type": localStorage.getItem("type"),
-		"service": localStorage.getItem("service")
-	};
+	switch (type) {
+		case 'handicap':
+			type = "2"
+			break;
+			
+		case 'common':
+			type = "1"
+			break;
+	}
 
-	$.post(apiUrl + "/password", payload, function(data) {
+	switch (service) {
+		case 'revenue':
+			service = "1"
+			break;
+			
+		case 'sports':
+			service = "2"
+			break;
+	
+		case 'psychology':
+			service = "3"
+			break;
+				
+		case 'law':
+			service = "4"
+			break;
 		
+		case 'speech':
+			service = "5"
+			break;
+		
+	}
+
+	var settings = {
+		"async": true,
+		"crossDomain": true,
+		"url": "http://localhost:3000/password",
+		"method": "POST",
+		"headers": {
+		  "Content-Type": "application/json",
+		  "cache-control": "no-cache",
+		  "Postman-Token": "a0861cdb-ed42-43d3-a8c4-9541878a6e26"
+		},
+		"processData": false,
+		"data": "{\n    \"type\": \"" + type + "\",\n    \"service\": \"" + service + "\"\n}"
+	  }
+	  
+	$.ajax(settings).done(function (response) {
+
+		var paddedNumber = response.pswrd.padStart(3, "0");
+		localStorage.setItem("number", paddedNumber);
+
+		setInterval(function(){
+			window.open('password.html', '_blank');
+			location.reload();
+
+		}, 3000);
 	});
+}
+
+function getPswrds() {
+	var interval = setInterval(function(){
+
+		var settings = {
+			"async": true,
+			"crossDomain": true,
+			"url": "http://localhost:3000/password/serve",
+			"method": "GET",
+			"headers": {
+			  "Content-Type": "application/json",
+			  "cache-control": "no-cache",
+			  "Postman-Token": "02ba5752-6492-4021-a288-5b335b519063"
+			},
+			"processData": false,
+			"data": ""
+		  }
+		  
+		  $.ajax(settings).done(function (response) {
+
+			if (response) {
+				
+				var audio = new Audio('/mp3/attention.mp3');
+				var element = "<li>" + $("#currentPassword").text() + "</li>";
+
+				var playPromise = audio.play();
+				
+				$(".older__password li").last().remove();
+				$(".older__password").prepend(element);
+
+				$("#currentPassword").text(response.type + response.service + response.number.padStart(3, "0"));
+				animateCSS(document.querySelector("#currentPassword"), "flash");
+				
+			}
+		  });
+	}, 10000)
 }
